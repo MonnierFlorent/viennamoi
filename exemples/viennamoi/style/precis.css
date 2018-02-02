@@ -1,0 +1,37 @@
+/*POLICES*/
+@import url('https://fonts.googleapis.com/css?family=Cabin|Hammersmith+One|Vollkorn:400i');
+
+/*UTILISÉ POUR LES TITRES SOUS LES ICONS PAR EXEMPLE*/
+h3 {
+	color:#720E29;
+	font-family: 'Hammersmith One', sans-serif;
+	text-transform: uppercase;
+	font-size:1.5em;}
+
+/*UTILISÉ POUR LES TITRES SOUS LES PACKS*/
+#packs h2 {
+	font-family: 'Vollkorn', serif;
+	margin-top:15px;
+	color:#720E29;
+	text-transform: lowercase;
+	font-size:1.3em;}
+
+
+/*COULEUR DE FOND ET POLICE DE BASE DU SITE*/
+html, body {
+	background:#7C7C7C;
+	font-family: 'Cabin', sans-serif;}
+
+/*COULEUR DU HEADER*/
+header {
+	background:#E55B62;}
+
+/*COULEUR DES BLOCS*/
+div {
+	background:#EEE5E9;}
+/*+ les blocs peuvent avoir des touches de blanc (bordures, etc)*/
+
+/*COULEUR DU FOOTER*/
+footer {
+	background:#1E1E24;
+	color:white;}

@@ -1,0 +1,174 @@
+<!doctype html>
+
+<html lang="fr">
+	<head>
+		<meta charset ="utf-8" />
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+		<title>products</title>
+
+		<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<!-- 
+		##     ##  ########      ###     ########   ########   ########   
+		##     ##  ##           ## ##    ##     ##  ##         ##     ##  
+		##     ##  ##          ##   ##   ##     ##  ##         ##     ##  
+		#########  ######     ##     ##  ##     ##  ######     ########   
+		##     ##  ##         #########  ##     ##  ##         ##   ##    
+		##     ##  ##         ##     ##  ##     ##  ##         ##    ##   
+		##     ##  ########   ##     ##  ########   ########   ##     ##  
+		 -->
+		<header>
+	
+			<div class="container-fluid">
+				<div class="container">
+					<div class="row">
+	
+						<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+							<span class="navbar-brand">
+								<img src="img/croissant2-1.svg" width="40" height="35" class="d-inline-block align-top" alt="vienn'a moi">
+								VIENN'A MOI
+							</span>
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+	
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class="navbar-nav mr-auto">
+									<li class="nav-item">
+										<a class="nav-link" href="index.html">Accueil</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="packs.html">Packs</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="providers.html">Fournisseurs</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">FAQ</a>
+									</li>
+								</ul>
+								<form class="form-inline my-2 my-lg-0">
+									<input class="form-control mr-sm-2 is-invalid" type="search" placeholder="Search" id="search" aria-label="Recherche">
+									<button class="btn btn-secondary my-2 my-sm-0 mr-sm-2" type="submit">Go</button>
+								</form>
+								<a class="btn btn-danger mr-sm-2 my-2 my-sm-0" href="register.html">
+									<i class="fa fa-plus-circle" aria-hidden="true"></i>
+								</a>
+						    <a class="btn btn-danger my-2 my-sm-0" href="#">
+						    	<i class="fa fa-cog" aria-hidden="true"></i>
+						    </a>
+							</div>
+						</nav>
+
+					</div>
+				</div>
+			</div>
+	
+		</header>
+
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div id="packs" class="col-12 row">
+						<div class="col-12 col-md-4">
+							<a href="">
+							<img src="img/P-viennoiserie.png" alt="pack_viennoiseries">
+							<h2>Pack Viennoiseries</h2>
+							<p>Dans ce pack, vous pouvez retrouver : des croissants, des pains au chocolat, des chaussons au pommes, des mini-viennoiseries, ...</p>
+							</a>
+						</div>
+						<div class="col-12 col-md-4">
+							<a href="">
+							<img src="img/P-migniardise.png" alt="pack_migniardises">
+							<h2>Pack Migniardises</h2>
+							<p>Dans ce pack, vous pouvez retrouver : des tartelettes aux fruits, au chocolat, des éclairs, des flans, des brownies, ...</p>
+							</a>
+						</div>
+						<div class="col-12 col-md-4">
+							<a href="">
+							<img src="img/P-patisserie.png" alt="pack_patisseries">
+							<h2>Pack Pâtisseries</h2>
+							<p>Dans ce pack, vous pouvez retrouver : tartes aux fruits, des framboisiers, des fraisiers, des pralulines, des tartes au sucre, ...</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="pagepacks" class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 packcenter">
+						<h2>NOS PACKS</h2>
+						<div class="packleft">
+							<h4>Pack "Viennoiseries"</h4>
+								<ul>
+									<li>Format duo --------------------- 00.00€ 
+										<button class="btn btn-danger"><a href="panier.php?action=ajout&amp;l=Nom&amp;q=Quantité&amp;p=prix_unitaire_produit" onclick="window.open(this.href, '', 'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></button><br>
+										<p>quatre viennoiseries suivant les disponibilités. les mini-viennoiseries sont doublées.</p>
+									</li>
+									<li>Format famille ------------  00.00€
+									 <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+									<br>
+										<p>dix viennoiseries suivant les disponibilités. les mini-viennoiseries sont doublées.</p>	
+									</li>
+								</ul>
+							<h4 >Pack "Mignardises"</h4>
+								<ul>
+									<li>Format duo --------------------- 00.00€ 
+										<button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i></button> <br>
+										<p>deux pâtisseries suivant les disponibilités.</p>
+									</li>
+									<li>Format famille ------------ 00.00€ 
+										<button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+									<br>
+										<p>cinq pâtisseries suivant les disponibilités.</p>	
+									</li>
+								</ul>
+							<h4>Pack "Pâtisserie"</h4>
+								<ul>
+									<li>Format unique --------------------- 00.00€ 
+										<button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i></button> <br>
+										<p>un gâteau, une tarte, ou autre au format 6/8 parts.</p>
+									</li>
+									
+								</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 
+		########    #######    #######   ########   ########   ########   
+		##         ##     ##  ##     ##     ##      ##         ##     ##  
+		##         ##     ##  ##     ##     ##      ##         ##     ##  
+		######     ##     ##  ##     ##     ##      ######     ########   
+		##         ##     ##  ##     ##     ##      ##         ##   ##    
+		##         ##     ##  ##     ##     ##      ##         ##    ##   
+		##          #######    #######      ##      ########   ##     ##  
+		 -->
+		<footer>
+			<div class="container-fluid">
+				<div class="container">
+					<div class="row">
+						<div class="blocfooter col-12 col-md-4">du texte</div>
+						<div class="blocfooter col-12 col-md-4">du texte</div>
+						<div class="blocfooter col-12 col-md-4">du texte</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+	<!--JAVASCRIPT-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>

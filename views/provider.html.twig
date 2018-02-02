@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Viennamoi{% endblock %}
+{% block content %}
+
+
+ <main>
+
+  <div class="container-fluid">
+   <div id="providers" class="container">
+    {%for prov in provider %}
+     <div class="row">
+      <section class="col-xs-12">
+        <div class="row fournisseur">
+         <div class="col-xs-4">
+          <img src="../web/images/providers/{{prov.image}}" alt="Error ghost"/>
+         </div>
+         <div class="col-xs-8">
+          <h3>{{prov.name}}</h3>
+          <p class="descri">{{prov.content}}</p>
+          <p class="adress">{{prov.adress}} <br> {{prov.zip}} {{prov.city}}</p>
+         </div>            
+        </div>
+      </section>            
+     </div>
+    {%endfor%} 
+   </div>  
+  </div>
+
+ </main>
+
+{% endblock %}

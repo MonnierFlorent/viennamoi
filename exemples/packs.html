@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html lang="fr">
+	<head>
+		<meta charset ="utf-8" />
+		<link rel="stylesheet" type="text/css" href="web/css/style.css">
+		<title>products</title>
+
+		<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row">
+					
+					<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					  <a class="navbar-brand" href="#">Navbar</a>
+					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					    <span class="navbar-toggler-icon"></span>
+					  </button>
+
+					  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+					    <ul class="navbar-nav mr-auto">
+					      <li class="nav-item active">
+					        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link" href="#">Link</a>
+					      </li>
+					      <li class="nav-item dropdown">
+					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					          Dropdown
+					        </a>
+					        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					          <a class="dropdown-item" href="#">Action</a>
+					          <a class="dropdown-item" href="#">Another action</a>
+					          <div class="dropdown-divider"></div>
+					          <a class="dropdown-item" href="#">Something else here</a>
+					        </div>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link disabled" href="#">Disabled</a>
+					      </li>
+					    </ul>
+					    <form class="form-inline my-2 my-lg-0">
+					      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					    </form>
+					  </div>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row ">
+					<div class="col-4 packcenter">
+						<h3>Viennoiseries</h3>
+						<p>Disponible en deux formats</p>
+						<img class="imgpack" src="files/images/products/P-viennoiserie.png">
+						<p>Dans ce pack, vous pouvez retrouver : des croissants, des pains au chocolat, des chaussons au pommes, des mini-viennoiseries, ...</p>
+					</div>
+					<div class="col-4 packcenter">
+						<h3>Migniardises</h3>
+						<p>Disponible en deux formats</p>
+						<img class="imgpack" src="files/images/products/P-migniardise.png">
+						<p>Dans ce pack, vous pouvez retrouver : des tartelettes aux fruits, au chocolat, des éclairs, des flans, des brownies, ...</p>
+						
+					</div>
+					<div class="col-4 packcenter">
+						<h3>Pâtisseries</h3>
+						<p>Un seul format disponible</p>
+						<img class="imgpack" src="files/images/products/P-patisserie.png">
+						<p>Dans ce pack, vous pouvez retrouver : tartes aux fruits, des framboisiers, des fraisiers, des pralulines, des tartes au sucre, ...</p>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 packcenter">
+						<h2>NOS PACKS</h2>
+						<div class="packleft">
+							<h4>Pack "Viennoiseries"</h4>
+								<ul>
+									<li>Format duo --------------------- 00.00€ <button><a href="panier.php?action=ajout&amp;l=Nom&amp;q=Quantité&amp;p=prix_unitaire_produit" onclick="window.open(this.href, '', 'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a></button><br>
+										<p>quatre viennoiseries suivant les disponibilités. les mini-viennoiseries sont doublées.</p>
+									</li>
+									<li>Format famille ------------  00.00€ <button>Ajouter au panier</button>
+									<br>
+										<p>dix viennoiseries suivant les disponibilités. les mini-viennoiseries sont doublées.</p>	
+									</li>
+								</ul>
+							<h4 >Pack "Mignardises"</h4>
+								<ul>
+									<li>Format duo --------------------- 00.00€ <button>Ajouter au panier</button> <br>
+										<p>deux pâtisseries suivant les disponibilités.</p>
+									</li>
+									<li>Format famille ------------ 00.00€ <button>Ajouter au panier</button>
+									<br>
+										<p>cinq pâtisseries suivant les disponibilités.</p>	
+									</li>
+								</ul>
+							<h4>Pack "Pâtisserie"</h4>
+								<ul>
+									<li>Format unique --------------------- 00.00€ <button>Ajouter au panier</button> <br>
+										<p>un gâteau, une tarte, ou autre au format 6/8 parts.</p>
+									</li>
+									
+								</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<!--JAVASCRIPT-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>

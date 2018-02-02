@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ asset('/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/lib/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    <title>viennamoi - {% block title %}{% endblock %}</title>
+</head>
+<body>
+ <!--
+     ##     ##  ########      ###     ########   ########   ########
+     ##     ##  ##           ## ##    ##     ##  ##         ##     ##
+     ##     ##  ##          ##   ##   ##     ##  ##         ##     ##
+     #########  ######     ##     ##  ##     ##  ######     ########
+     ##     ##  ##         #########  ##     ##  ##         ##   ##
+     ##     ##  ##         ##     ##  ##     ##  ##         ##    ##
+     ##     ##  ########   ##     ##  ########   ########   ##     ##
+ -->
+ <header>
+
+  <div class="container-fluid">
+   <div class="container">
+    <div class="row">
+       
+     <nav class="navbar navbar-fixed-top navbar-default navbar-inverse">
+      <div class="container-fluid">
+       <!-- Brand and toggle get grouped for better mobile display -->
+       <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand">
+         <img src="{{ asset('/images/logo/croissant2-1.svg') }}" width="40" height="35" class="align-top" alt="vienn'a moi">
+         <h1 class="align-top">VIENN'A MOI</h1>
+        </div>
+       </div>
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+         <li class="active"><a href="{{ path('home') }}">Accueil</a></li>
+         <li><a href="{{ path('product') }}">Packs</a></li>
+         <li><a href="{{ path('bakery') }}">Fournisseurs</a></li>
+         <li><a href="{{ path('faq') }}">FAQ</a></li>
+        </ul>
+        <div class="navbar-form navbar-right">
+         <a class="btn btn-danger mr-sm-2 my-2 my-sm-0" href="{{ path('admin') }}">
+          <i class="fa fa-cogs"></i>
+         </a>
+         <a class="btn btn-danger mr-sm-2 my-2 my-sm-0" href="{{ path('register') }}">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+         </a>
+          <button type="button" class="btn btn-danger my-2 my-sm-0" data-toggle="modal" data-target="#myModal">
+           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          </button>
+         <a class="btn btn-danger my-2 my-sm-0" href="#">
+          <i class="fa fa-shopping-basket"></i>
+         </a>
+         <a class="btn btn-danger my-2 my-sm-0" href="{{ path('logout') }}">
+          <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+         </a>
+        </div>
+        <form class="navbar-form navbar-right">
+         <div class="form-group">
+          <input id="search" type="text" class="form-control navsearch" placeholder="Search">
+         </div>
+         <button type="submit" class="btn btn-danger my-2 my-sm-0 mr-sm-2">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+         </button>
+        </form>
+       </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+     </nav>
+
+    </div>
+   </div>
+  </div>
+
+ </header>
+
+ <!--
+ ##     ##     ###     ####  ##    ##
+ ###   ###    ## ##     ##   ###   ##
+ #### ####   ##   ##    ##   ####  ##
+ ## ### ##  ##     ##   ##   ## ## ##
+ ##     ##  #########   ##   ##  ####
+ ##     ##  ##     ##   ##   ##   ###
+ ##     ##  ##     ##  ####  ##    ##
+ -->
+ <main>
+  <div id="content">{% block content %}{% endblock %}</div>
+
+  <div id="myModal" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+     <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Connexion</h4>
+     </div>
+     <div class="modal-body">
+      <form class="form-signin form-horizontal" role="form" action="{{ path('login_check') }}" method="post">
+       <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+         <input type="text" name="_username" value="{{ last_username }}" class="form-control" placeholder="Enter your username" required autofocus>
+        </div>
+       </div>
+       <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+         <input type="password" name="_password" class="form-control" placeholder="Enter your password" required>
+        </div>
+       </div>
+       <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+         <button type="submit" class="form-control btn btn-default btn-danger"><span class="glyphicon glyphicon-log-in"></span> Connexion</button>
+        </div>
+       </div>
+      </form>
+     </div>
+     <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+     </div>
+    </div>
+
+   </div>
+  </div>
+ </main>
+
+ <!-- 
+ ########    #######    #######   ########   ########   ########   
+ ##         ##     ##  ##     ##     ##      ##         ##     ##  
+ ##         ##     ##  ##     ##     ##      ##         ##     ##  
+ ######     ##     ##  ##     ##     ##      ######     ########   
+ ##         ##     ##  ##     ##     ##      ##         ##   ##    
+ ##         ##     ##  ##     ##     ##      ##         ##    ##   
+ ##          #######    #######      ##      ########   ##     ##  
+ -->
+ <footer>
+  <div class="container-fluid">
+   <div class="container">
+    <img src="{{ asset('/images/logo/logorond.png') }}" class="visible-xs hidden-md logorond">
+    <div class="row">
+     <div class="blocfooter col-xs-12 col-md-4 mt-5 mt-md-0 contact">
+      <h6>retrouvez nous sur :</h6>
+      <i class="fa fa-facebook-official" aria-hidden="true"></i><br>
+      <i class="fa fa-twitter" aria-hidden="true"></i><br>
+      <i class="fa fa-instagram" aria-hidden="true"></i>
+     </div>
+     <div class="blocfooter col-xs-12 col-md-4 vienn">
+      <h6>Vienn'A Moi</h6>
+      <ul>
+       <li>Partenariat</li>
+       <li>Devenir livreur</li>
+       <li>CGU</li>
+       <li>Mentions Légales</li>
+      </ul>
+     </div>
+     <div class="blocfooter col-xs-12 col-md-4 servcli">
+      <h6>Service client</h6>
+      <ul>
+       <li>service-client@viennamoi.fr</li>
+       <li>Suivre votre livraison</li>
+       <li>Guide d'utilisation</li>
+       <li><i class="fa fa-phone" aria-hidden="true"></i> 04 74 00 00 00</li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+ </footer>
+
+    <!-- jQuery -->
+    <script src="{{ asset('/lib/jquery/jquery.min.js') }}"></script>
+    <!-- JavaScript Boostrap plugin -->
+    <script src="{{ asset('/lib/bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+</html>
