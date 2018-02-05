@@ -46,6 +46,38 @@ class ApiController {
   return $data;
  }
  
+ public function getAddressAction(Application $app) {
+  $addresss = $app['dao.address']->findAll();
+  // Convert an array of objects ($articles) into an array of associative arrays ($responseData)
+  $responseData = array();
+  foreach ($addresss as $address) {
+   $cityId = null;
+   if ($address->getCity() != NULL) {
+    $cityId = $address->getCity()->getId();
+   }
+   $responseData[] = $this->buildAddressArray($address, $cityId);
+  }
+  // Create and return a JSON response
+  return $app->json($responseData);
+ }
+
+ /**
+  * Converts an Article object into an associative array for JSON encoding
+  *
+  * @param Article $book Article object
+  *
+  * @return array Associative array whose fields are the article properties.
+  */
+ private function buildAddressArray(Address $address, $cityId) {
+  $data = array(
+      'Code_commune_INSEE' => $address->getId(),
+      'Nom_commune' => $address->getName(),
+      'Code_postal' => $address->getCP(),
+      'addr_insee' => $cityId,
+  );
+  return $data;
+ }
+ 
 // public function getUserAction(Application $app) {
 //  $users = $app['dao.role']->findAll();
 //  // Convert an array of objects ($articles) into an array of associative arrays ($responseData)

@@ -60,7 +60,9 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
 //};
 //
 $app['dao.user'] = function ($app) {
-    return new viennamoi\DAO\UserDAO($app['db']);
+    $userDAO = new viennamoi\DAO\UserDAO($app['db']);
+    $userDAO->setRoleDAO($app['dao.role']);
+    return $userDAO;
 };
 
 $app['dao.role'] = function ($app) {
@@ -68,7 +70,9 @@ $app['dao.role'] = function ($app) {
 };
 
 $app['dao.address'] = function ($app) {
-    return new viennamoi\DAO\AddressDAO($app['db']);
+    $addressDAO = new viennamoi\DAO\AddressDAO($app['db']);
+    $addressDAO->setCityDAO($app['dao.city']);
+    return $addressDAO;
 };
 
 $app['dao.bakery'] = function($app) {
@@ -79,6 +83,10 @@ $app['dao.bakery'] = function($app) {
 
 $app['dao.product'] = function($app) {
     return new viennamoi\DAO\ProductDAO($app['db']);  
+};
+
+$app['dao.city'] = function ($app) {
+    return new viennamoi\DAO\CityDAO($app['db']);
 };
 
 //complexe dao service

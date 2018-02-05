@@ -11,6 +11,7 @@ use viennamoi\domain\Bakery;
  */
 class BakeryDAO extends DAO {
 
+ 
  private $addressDAO;
 
  public function setAddressDAO(AddressDAO $addressDAO) {

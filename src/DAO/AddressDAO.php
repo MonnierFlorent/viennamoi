@@ -10,6 +10,12 @@ use viennamoi\Domain\Address;
  * @author ETUDIANT
  */
 class AddressDAO extends DAO {
+ 
+ private $cityDAO;
+
+ public function setCityDAO(CityDAO $cityDAO) {
+  $this->cityDAO = $cityDAO;
+ }
 
  /**
   * Returns a list of all users, sorted by role and name.
@@ -123,8 +129,15 @@ class AddressDAO extends DAO {
   $address->setLine1($row['addr_line1']);
   $address->setLine2($row['addr_line2']);
   $address->setInsee($row['addr_insee']);
-  $address->setType($row['addr_type']);
-  $address->setName($row['addr_name']);
+  //$address->setType($row['addr_type']);
+  //$address->setName($row['addr_name']);
+  
+  if ($row['addr_id'] != null) {
+   //find and set the associated user
+   $cityId = $row['addr_insee'];
+   $city = $this->cityDAO->find($cityId);
+   $address->setInsee($city);
+  }
   return $address;
  }
 

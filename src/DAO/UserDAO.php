@@ -17,9 +17,9 @@ class UserDAO extends DAO implements UserProviderInterface {
 
  private $roleDAO;
 
-// public function setRoleDAO(RoleDAO $roleDAO) {
-//  $this->roleDAO = $roleDAO;
-// }
+ public function setRoleDAO(RoleDAO $roleDAO) {
+  $this->roleDAO = $roleDAO;
+ }
  
  /**
   * Returns a user matching the supplied id.
@@ -162,6 +162,16 @@ class UserDAO extends DAO implements UserProviderInterface {
  public function supportsClass($class) {
 
   return 'viennamoi\Domain\User' === $class;
+ }
+ 
+     /**
+  * Removes an user from the database.
+  *
+  * @param integer $id The user id.
+  */
+ public function delete($id) {
+  // Delete the user
+  $this->getDb()->delete('vienn_users', array('user_id' => $id));
  }
 
 }

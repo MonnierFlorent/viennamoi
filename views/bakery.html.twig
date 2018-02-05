@@ -4,28 +4,29 @@
 
 
  <main role="main">
+  <div class="container-fluid">
+   <div id="providers" class="container">
   {%for bak in bakery %}
-   <div class="container-fluid">
-    <div id="providers" class="container">
-     <div class="row">
-      <section class="offset-1 col-xs-10 offset-1">
-       <div class="container">
-        <div class="row">
-         <div class="col-xs-12 col-md-4">
-          <img  src="../web/images/providers/{{bak.image}}" alt="Error ghost"/>
+   <div class="row">
+      <section class="col-xs-12">
+        <div class="row fournisseur">
+         <div class="col-xs-4">
+          <img src="../web/images/providers/{{bak.image}}" alt="Error ghost"/>
          </div>
-         <div class="col-xs-12 col-md-8">
+         <div class="col-xs-8">
           <h3>{{bak.name}}</h3>
           <p class="descri">{{bak.content}}</p>
-          <p class="adress"> {{bak.address.line1}} <br>  </p> 
+          <p class="adress">
+           {{bak.address.line1}}<br>
+           {{bak.address.insee.CP}} - {{bak.address.insee.name}}</p>
          </div>            
         </div>
-       </div>
       </section>            
      </div>
-    </div>
-   </div>
-  {%endfor%}          
+  {%endfor%}   
+   </div>  
+  </div>
+
  </main>
  <center>
   <style>
@@ -35,7 +36,6 @@
     width: 450px;
    }
   </style>
-  <h3>My Google Maps Demo</h3>
   <div id="map"></div><br>
  </center>
  <script>
