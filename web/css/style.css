@@ -76,7 +76,7 @@ input.navsearch:focus {
  background:#720E29 !important;}
 
 .navbar-brand {
- width:180px;}
+ width:160px;}
 
 .navbar-brand img {
  position:absolute;
@@ -88,6 +88,9 @@ input.navsearch:focus {
  position:absolute;
  top:0px;
  left:60px;}
+
+.nav>li>a {
+ padding: 15px 10px;}
 
 .navbar a, .navbar a:visited {
   color:white;}
@@ -420,6 +423,11 @@ input.navsearch:focus {
 #providers .descri {
  text-align: justify;}
 
+#providers div#map {
+ margin:30px 0;
+ height: 400px;
+ width: 100%;}
+
 /*
 ########   ########    ######    ####   ######    ########   ########   ########   
 ##     ##  ##         ##    ##    ##   ##    ##      ##      ##         ##     ##  
@@ -472,9 +480,12 @@ input.navsearch:focus {
  text-align: center;}
 
 #pagepacks h4 {
+ border-top:2px solid #EEE5E9;
  font-family: 'Hammersmith One', sans-serif;
  text-transform: uppercase;
- color:#1E1E24;}
+ color:#1E1E24;
+ padding:25px 0;
+ margin-top:25px;}
 
 .packcenter {
  background: white;
@@ -487,25 +498,27 @@ input.navsearch:focus {
  max-width:630px;
  margin:0 auto;}
 
-.packleft .packformat, .packleft .dborder, .packleft .price {
+.packleft .packformat, .packleft .dborderxs, .packleft .dborder, .packleft .price {
  display:inline-block;}
 
 .packleft .packformat {
- width:110px;}
+ width:110px;
+ font-weight: bold;}
 
 .packleft .dborder {
  width:340px;
  height:1px;
  border-bottom:1px dashed black;}
 
-.dborderxs {
+.packleft .dbordermd {
  width:140px;
  height:1px;
  border-bottom:1px dashed black;}
 
 .packleft .price {
  text-align: right;
- width:125px;}
+ width:55px;
+ margin-right:15px;}
 
 .packleft .price button {
  margin-left:5px;}
@@ -539,6 +552,13 @@ input.navsearch:focus {
  min-height:200px;
  margin:55px 20px 0;
  border:15px solid white;
+}
+
+#administration {
+ margin:30px auto;
+ padding:20px 50px;
+ background:#EEE5E9;
+ min-height:700px;
 }
 
 /*___________________________________________________________________*/

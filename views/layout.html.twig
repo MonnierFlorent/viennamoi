@@ -29,7 +29,7 @@
       <div class="container-fluid">
        <!-- Brand and toggle get grouped for better mobile display -->
        <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarcollapse" aria-expanded="false">
          <span class="sr-only">Toggle navigation</span>
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
@@ -41,29 +41,34 @@
         </div>
        </div>
        <!-- Collect the nav links, forms, and other content for toggling -->
-       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="collapse navbar-collapse" id="navbarcollapse">
         <ul class="nav navbar-nav">
-         <li class="active"><a href="{{ path('home') }}">Accueil</a></li>
-         <li><a href="{{ path('product') }}">Packs</a></li>
-         <li><a href="{{ path('bakery') }}">Fournisseurs</a></li>
-         <li><a href="{{ path('faq') }}">FAQ</a></li>
+         <li class="{% if home is defined %}active{% endif %}"><a href="{{ path('home') }}">Accueil</a></li>
+         <li class="{% if product is defined %}active{% endif %}"><a href="{{ path('product') }}">Packs</a></li>
+         <li class="{% if bakery is defined %}active{% endif %}"><a href="{{ path('bakery') }}">Fournisseurs</a></li>
+         <li class="{% if faq is defined %}active{% endif %}"><a href="{{ path('faq') }}">FAQ</a></li>
         </ul>
         <div class="navbar-form navbar-right">
+         {% if app.user and is_granted('ROLE_ADMIN') %}
          <a class="btn btn-danger mr-sm-2 my-2 my-sm-0" href="{{ path('admin') }}">
           <i class="fa fa-cogs"></i>
          </a>
+         {% endif %}
+         <a class="btn btn-danger my-2 my-sm-0" href="#">
+          <i class="fa fa-shopping-basket"></i>
+         </a>
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+         <a class="btn btn-danger my-2 my-sm-0" href="{{ path('logout') }}">
+          <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+         </a>
+          {% else %}
          <a class="btn btn-danger mr-sm-2 my-2 my-sm-0" href="{{ path('register') }}">
           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
          </a>
           <button type="button" class="btn btn-danger my-2 my-sm-0" data-toggle="modal" data-target="#myModal">
            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
           </button>
-         <a class="btn btn-danger my-2 my-sm-0" href="#">
-          <i class="fa fa-shopping-basket"></i>
-         </a>
-         <a class="btn btn-danger my-2 my-sm-0" href="{{ path('logout') }}">
-          <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-         </a>
+          {% endif %}
         </div>
         <form class="navbar-form navbar-right">
          <div class="form-group">
@@ -179,5 +184,7 @@
     <script src="{{ asset('/lib/jquery/jquery.min.js') }}"></script>
     <!-- JavaScript Boostrap plugin -->
     <script src="{{ asset('/lib/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhwJwyFPjHBHqSfB5mgGMVTB-d6FR5bPs&callback=initMap"></script>
+    <script src="{{ asset('/js/script.js') }}"></script>
 </body>
 </html>

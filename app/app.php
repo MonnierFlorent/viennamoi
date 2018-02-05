@@ -81,12 +81,19 @@ $app['dao.bakery'] = function($app) {
     return $bakeryDAO;
 };
 
+$app['dao.city'] = function ($app) {
+    return new viennamoi\DAO\CityDAO($app['db']);
+};
+
 $app['dao.product'] = function($app) {
     return new viennamoi\DAO\ProductDAO($app['db']);  
 };
+$app['dao.format'] = function($app) {
+    return new viennamoi\DAO\ProductDAO($app['db']);  
+};
 
-$app['dao.city'] = function ($app) {
-    return new viennamoi\DAO\CityDAO($app['db']);
+$app['dao.category'] = function($app) {
+    return new viennamoi\DAO\CategoryDAO($app['db']);  
 };
 
 //complexe dao service

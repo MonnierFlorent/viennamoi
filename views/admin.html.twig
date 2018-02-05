@@ -1,6 +1,9 @@
 {% extends "layout.html.twig" %}
 {% block title %}Administration{% endblock %}
-{% block content %}
+{% block content %} 
+ <main role="main">
+  <div class="container-fluid">
+   <div id="administration" class="container">
  <h2 class="text-center">{{ block('title') }}</h2>
  {% for flashMessage in app.session.flashbag.get('success') %}
   <div class="alert alert-success">
@@ -28,9 +31,9 @@
        <th>Role</th>
        <th>Adresse</th>
        <th>Ville</th>
-       <th>Code Postale</th>
+       <th>Code Postal</th>
        <th>Email</th>
-       <th>nom produit</th>
+       <th>Id</th>
 
 
       </tr>
@@ -84,4 +87,9 @@
   {% endif %}
   <a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add user</button></a>
  </div>
+ 
+   </div>  
+  </div>
+
+ </main>
 {% endblock %}

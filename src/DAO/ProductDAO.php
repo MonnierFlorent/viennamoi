@@ -7,7 +7,7 @@ use viennamoi\Domain\Product;
 class ProductDAO extends DAO{
     
     public function find($id) {
-        $sql = "select * from products where prod_id=?";
+        $sql = "select * from vienn_format where format_id=?";
         $row = $this->getDb()->fetchAssoc($sql, array($id));
 
         if ($row) {
@@ -19,13 +19,13 @@ class ProductDAO extends DAO{
     }
     
     public function findALL() {
-	$sql = "select * from products order by prod_id desc";
+	$sql = "select * from vienn_format order by format_cate";
 	$result = $this->getDb()->fetchAll($sql);
 	
 	//convert query result to an array of domain objects
 	$entities = array ();
 	foreach ($result as $row) {
-	    $id = $row['prod_id'];
+	    $id = $row['format_id'];
 	    $entities[$id] = $this->buildDomainObject($row);
 	}
 	return $entities;
@@ -34,19 +34,20 @@ class ProductDAO extends DAO{
     public function save(Product $product) {
 		
 	$productData = array(
-            'prod_name' => $product->getName(),
-            'prod_content' => $product->getContent(),
-	    'prod_price' => $product->getPrice(),
-	    'prod_stock' => $product->getStock(),
+            'format_name' => $product->getName(),
+            'format_price' => $product->getContent(),
+            'format_content' => $product->getPrice(),
+            'format_cate' => $product->getCate(),
+            'format_stock' => $product->getStock(),
 	    	    
             );
 
         if ($product->getId()) {
             // The book has already been saved : update it
-            $this->getDb()->update('product', $productData, array('prod_id' => $product->getId()));
+            $this->getDb()->update('vienn_format', $productData, array('format_id' => $product->getId()));
         } else {
             // The book has never been saved : insert it
-            $this->getDb()->insert('product', $productData);
+            $this->getDb()->insert('vienn_format', $productData);
             // Get the id of the newly created book and set it on the entity.
             $id = $this->getDb()->lastInsertId();
             $product->setId($id);
@@ -55,18 +56,19 @@ class ProductDAO extends DAO{
     
     protected function buildDomainObject(array $row) {
 	$product = new Product();
-	$product->setId($row['prod_id']);
-	$product->setName($row['prod_name']);
-        $product->setContent($row['prod_content']);
-        $product->setPrice($row['prod_price']);
-        $product->setStock($row['prod_stock']);	
+	$product->setId($row['format_id']);
+	$product->setName($row['format_name']);
+    $product->setContent($row['format_content']);
+    $product->setPrice($row['format_price']);
+    $product->setStock($row['format_stock']);	
+    $product->setCate($row['format_cate']);	
 		
         return $product;
     }
     
     public function delete($id) {
         // Delete the book
-	$this->getDb()->delete('product', array('prod_id' => $id));
+	$this->getDb()->delete('product', array('format_id' => $id));
 	
     }
 

@@ -27,8 +27,9 @@ class HomeController {
  }
 
  public function productAction(Application $app) {
-  $products = $app['dao.product']->findAll();
-  return $app['twig']->render('product.html.twig', array('product' => $products,));
+  $products = $app['dao.format']->findAll();
+  $categories = $app['dao.category']->findAll();
+  return $app['twig']->render('product.html.twig', array('products' => $products, 'categories'=>$categories));
  }
 
 //    public function lockBookAction($id, Application $app) {
